@@ -7,8 +7,12 @@ const fetch = require("node-fetch");
 exports.handler = async ({ queryStringParameters }) => {
   const { searchTerm, searchType } = queryStringParameters;
 
-  return {
-    statusCode: 200,
-    body: "",
-  };
+  try {
+    const parameter = searchType === "text" ? "s" : "i";
+    const response = await fetch(
+      `http://www.omdbapi.com/?${parameter}=${searchTerm}&apikey=${process.env.OMDB_API_KEY}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
 };
