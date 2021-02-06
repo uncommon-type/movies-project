@@ -12,6 +12,7 @@ exports.handler = async ({ queryStringParameters }) => {
     const response = await fetch(
       `http://www.omdbapi.com/?${parameter}=${searchTerm}&apikey=${process.env.OMDB_API_KEY}`
     );
+    const data = await response.json();
   } catch (error) {
     console.log(error);
   }
