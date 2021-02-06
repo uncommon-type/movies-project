@@ -4,7 +4,9 @@ require("dotenv").config({
 
 const fetch = require("node-fetch");
 
-exports.handler = async () => {
+exports.handler = async ({ queryStringParameters }) => {
+  const { searchTerm, searchType } = queryStringParameters;
+
   return {
     statusCode: 200,
     body: "",
