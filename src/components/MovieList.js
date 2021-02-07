@@ -1,7 +1,7 @@
 import React from "react";
 import MovieListItem from "./MovieListItem";
 
-const MovieList = ({ searchTerm, searchResults }) => (
+const MovieList = ({ searchTerm, searchResults, onAdd }) => (
   <section className="movie-list-group">
     <div className="movie-list-group__inner">
       <h3 className="movie-list__title text-700">Results for: {searchTerm}</h3>
@@ -13,6 +13,7 @@ const MovieList = ({ searchTerm, searchResults }) => (
             id={id}
             title={Title}
             year={Year}
+            onAdd={onAdd}
           />
         ))}
       </ul>
