@@ -4,6 +4,7 @@ const AddButton = ({ id, title, year, onAdd, isAdded }) => (
   <button
     onClick={(event) => onAdd(id, title, year)}
     disabled={isAdded}
+    aria-pressed={isAdded}
     type="button"
     className="btn"
   >
