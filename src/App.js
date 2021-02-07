@@ -5,6 +5,8 @@ import SearchResults from "./containers/SearchResults";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
+  const [playList, setPlayList] = useState([]);
+
   const handleSearch = async (searchTerm) => {
     setInputValue(searchTerm);
   };
