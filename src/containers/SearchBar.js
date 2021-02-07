@@ -6,6 +6,7 @@ const SearchBar = ({ onSearch }) => {
   useEffect(() => {
     const searchQuery = localStorage.getItem("searchQuery") || "";
     if (searchQuery) {
+      setSearchTerm(searchQuery);
     }
   });
 
