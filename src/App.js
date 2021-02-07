@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useCallback } from "react";
 import SearchBar from "./containers/SearchBar";
 import Header from "./components/Header";
 import SearchResults from "./containers/SearchResults";
@@ -24,9 +24,9 @@ const App = () => {
     });
   };
 
-  const checkIfAdded = (id) => {
+  const checkIfAdded = useCallback((id) => {
     return !!playList.find((entry) => entry.id === id);
-  };
+  }, []);
 
   return (
     <Fragment>
