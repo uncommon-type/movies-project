@@ -7,6 +7,7 @@ const SearchBar = ({ onSearch }) => {
       <form className="app__search__controls" action="/search" method="get">
         <input
           value={searchTerm}
+          onChange={handleOnChange}
           type="text"
           name="q"
           id="searchBar"
