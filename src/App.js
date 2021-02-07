@@ -5,6 +5,9 @@ import SearchResults from "./containers/SearchResults";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
+  const handleSearch = async (searchTerm) => {
+    setInputValue(searchTerm);
+  };
   return (
     <Fragment>
       <Header />
