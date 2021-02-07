@@ -7,6 +7,7 @@ const SearchBar = ({ onSearch }) => {
 
   const handleOnChange = (event) => {
     setSearchTerm(event.target.value);
+    clearTimeout(searchTimeout.current);
   };
 
   return (
