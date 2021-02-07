@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect, useCallback } from "react";
 import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
 
-const SearchResults = ({ searchTerm, playList, onAdd }) => {
+const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
@@ -38,8 +38,9 @@ const SearchResults = ({ searchTerm, playList, onAdd }) => {
         searchResults={searchResults}
         onAdd={onAdd}
         checkIfAdded={checkIfAdded}
+        onRemove={onRemove}
       />
-      <PlayList playList={playList} />
+      <PlayList playList={playList} onRemove={onRemove} />
     </Fragment>
   );
 };
