@@ -4,6 +4,7 @@ import PlayList from "../components/PlayList";
 
 const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
   const [searchResults, setSearchResults] = useState([]);
+  const [isSearchTriggered, setSearchTriggered] = useState(false);
 
   useEffect(() => {
     const getMovies = async (searchTerm, searchType = "text") => {
