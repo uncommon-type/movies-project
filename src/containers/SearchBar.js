@@ -8,7 +8,6 @@ const SearchBar = ({ onSearch }) => {
   const handleOnChange = useCallback(
     (event) => {
       setSearchTerm(event.target.value);
-      localStorage.setItem("search", event.target.value);
       clearTimeout(searchTimeout.current);
       searchTimeout.current = setTimeout(() => {
         onSearch(event.target.value);
@@ -17,14 +16,11 @@ const SearchBar = ({ onSearch }) => {
     [onSearch, setSearchTerm, searchTimeout]
   );
 
-  const handleOnSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-      clearTimeout(searchTimeout.current);
-      onSearch(event.target.elements.q.value);
-    },
-    [onSearch, searchTimeout]
-  );
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    clearTimeout(searchTimeout.current);
+    onSearch(event.target.elements.q.value);
+  };
 
   return (
     <div className="app__search wrapper">
