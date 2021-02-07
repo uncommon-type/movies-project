@@ -35,6 +35,7 @@ const App = () => {
               searchTerm={inputValue}
               playList={playList}
               onAdd={handleAdd}
+              onRemove={handleRemove}
             />
           </div>
         </article>
