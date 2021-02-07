@@ -5,6 +5,10 @@ const SearchBar = ({ onSearch }) => {
 
   const searchTimeout = useRef(null);
 
+  const handleOnChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="app__search wrapper">
       <form
