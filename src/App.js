@@ -24,9 +24,12 @@ const App = () => {
     });
   };
 
-  const checkIfAdded = useCallback((id) => {
-    return !!playList.find((entry) => entry.id === id);
-  }, []);
+  const checkIfAdded = useCallback(
+    (id) => {
+      return !!playList.find((entry) => entry.id === id);
+    },
+    [playList]
+  );
 
   return (
     <Fragment>
