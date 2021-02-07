@@ -57,7 +57,9 @@ const App = () => {
             />
           </div>
         </article>
-        <Dialog closeDialog={handleCloseDialog} />
+        {playList.length > 2 ? (
+          <Dialog closeDialog={handleCloseDialog} />
+        ) : null}
       </main>
     </Fragment>
   );
