@@ -9,6 +9,10 @@ const App = () => {
     JSON.parse(localStorage.getItem("playList")) || []
   );
 
+  useEffect(() => {
+    localStorage.setItem("playList", JSON.stringify(playList));
+  }, [playList]);
+
   const handleSearch = async (searchTerm) => {
     setInputValue(searchTerm);
   };
