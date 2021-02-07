@@ -12,6 +12,13 @@ const MovieListItem = ({ id, title, year, onAdd, isAdded }) => (
           {title} ({year})
         </p>
       </div>
+      <AddButton
+        id={id}
+        title={title}
+        year={year}
+        onAdd={onAdd}
+        isAdded={isAdded}
+      />
     </div>
   </li>
 );
