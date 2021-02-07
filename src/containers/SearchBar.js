@@ -16,6 +16,7 @@ const SearchBar = ({ onSearch }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     clearTimeout(searchTimeout.current);
+    onSearch(event.target.elements.q.value);
   };
 
   return (
