@@ -317,10 +317,16 @@ input:focus {
 input::placeholder {
   color: rgba(51, 61, 81, 0.5);
 }
-
-.search__error {
+.main-content__body .search__error {
+  max-width: 65rem;
+  padding: 0 1.33rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1rem;
   text-align: center;
+  font-family: "Red Hat Display", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  color: #263147;
 }
 
 /*--------------------------------------------------------------------------*\
