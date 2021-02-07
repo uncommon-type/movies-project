@@ -1,7 +1,7 @@
 import React from "react";
 import RemoveButton from "./RemoveButton";
 
-const PlayListItem = ({ title, year }) => (
+const PlayListItem = ({ id, title, year, onRemove }) => (
   <li className="playlist__item">
     <div className="playlist__item__body">
       <div className="playlist-item__body__inner">
@@ -12,7 +12,7 @@ const PlayListItem = ({ title, year }) => (
           {title} ({year})
         </p>
       </div>
-      <RemoveButton />
+      <RemoveButton id={id} onRemove={onRemove} />
     </div>
   </li>
 );
