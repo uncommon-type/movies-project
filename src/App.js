@@ -33,8 +33,8 @@ const App = () => {
           <div className="main-content__body splitter gap-top-600">
             <SearchResults
               searchTerm={inputValue}
-              onAdd={handleAdd}
               playList={playList}
+              onAdd={handleAdd}
             />
           </div>
         </article>
