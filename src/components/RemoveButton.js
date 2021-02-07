@@ -1,7 +1,7 @@
 import React from "react";
 
-const RemoveButton = () => (
-  <button type="button" className="btn">
+const RemoveButton = ({ id, onRemove }) => (
+  <button onClick={() => onRemove(id)} type="button" className="btn">
     <span className="btn__txt">Remove</span>
   </button>
 );
