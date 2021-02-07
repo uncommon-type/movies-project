@@ -31,7 +31,7 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
     [playList]
   );
 
-  return (
+  return searchResults.length ? (
     <Fragment>
       <MovieList
         searchTerm={searchTerm}
@@ -42,6 +42,6 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
       />
       <PlayList playList={playList} onRemove={onRemove} />
     </Fragment>
-  );
+  ) : null;
 };
 export default SearchResults;
