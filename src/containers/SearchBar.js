@@ -4,7 +4,12 @@ const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <div className="app__search wrapper">
-      <form className="app__search__controls" action="/search" method="get">
+      <form
+        onSubmit={handleOnSubmit}
+        className="app__search__controls"
+        action="/search"
+        method="get"
+      >
         <input
           value={searchTerm}
           onChange={handleOnChange}
