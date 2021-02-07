@@ -15,7 +15,7 @@ const App = () => {
       <main id="app__main-content">
         <article className="wrapper">
           <div className="main-content__body splitter gap-top-600">
-            <SearchResults />
+            <SearchResults searchTerm={inputValue} />
           </div>
         </article>
       </main>
