@@ -10,6 +10,20 @@ const App = () => {
   const handleSearch = async (searchTerm) => {
     setInputValue(searchTerm);
   };
+
+  const handleAdd = (id, title, year) => {
+    setPlayList((playList) => {
+      return [
+        ...playList,
+        {
+          id,
+          title,
+          year,
+        },
+      ];
+    });
+  };
+
   return (
     <Fragment>
       <Header />
