@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const searchTimeout = useRef(null);
+
   return (
     <div className="app__search wrapper">
       <form
