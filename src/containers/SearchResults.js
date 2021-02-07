@@ -34,6 +34,10 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
     [playList]
   );
 
+  if (!isSearchTriggered) {
+    return null;
+  }
+
   return searchResults.length ? (
     <Fragment>
       <MovieList
