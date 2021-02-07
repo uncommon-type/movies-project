@@ -24,6 +24,10 @@ const App = () => {
     });
   };
 
+  const checkIfAdded = (id) => {
+    return !!playList.find((entry) => entry.id === id);
+  };
+
   return (
     <Fragment>
       <Header />
