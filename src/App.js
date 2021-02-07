@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Fragment>
       <Header />
-      <SearchBar />
+      <SearchBar onSearch={handleSearch} />
       <main id="app__main-content">
         <article className="wrapper">
           <div className="main-content__body splitter gap-top-600">
