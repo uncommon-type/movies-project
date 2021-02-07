@@ -36,6 +36,8 @@ const App = () => {
     setPlayList((playList) => playList.filter((item) => item.id !== id));
   };
 
+  const handleCloseDialog = () => {};
+
   return (
     <Fragment>
       <Header />
