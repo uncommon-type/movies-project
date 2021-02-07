@@ -1,7 +1,11 @@
 import React from "react";
 
-const AddButton = () => (
-  <button type="button" className="btn">
+const AddButton = ({ id, title, year, onAdd }) => (
+  <button
+    onClick={(event) => onAdd(id, title, year)}
+    type="button"
+    className="btn"
+  >
     <span className="btn__txt">Add to playlist</span>
     <span className="btn__check">
       <svg fill="#fff" viewBox="0 0 100 100" aria-hidden="true">
