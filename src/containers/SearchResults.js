@@ -18,8 +18,10 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
 
         const data = await res.json();
         setSearchResults(data);
+        setSearchTriggered(true);
       } catch (err) {
         console.error(err);
+        setSearchTriggered(true);
       }
     };
     getMovies(searchTerm);
