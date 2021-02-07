@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
 
-const SearchResults = ({ searchTerm }) => {
+const SearchResults = ({ searchTerm, playList, onAdd }) => {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,11 @@ const SearchResults = ({ searchTerm }) => {
 
   return (
     <Fragment>
-      <MovieList searchTerm={searchTerm} searchResults={searchResults} />
+      <MovieList
+        searchTerm={searchTerm}
+        searchResults={searchResults}
+        onAdd={onAdd}
+      />
       <PlayList />
     </Fragment>
   );
