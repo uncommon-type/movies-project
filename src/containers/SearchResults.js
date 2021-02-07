@@ -1,19 +1,25 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
 
 const SearchResults = ({ searchTerm }) => {
   const [searchResults, setSearchResults] = useState([]);
-  const getMovies = async (searchTerm, searchType = "text") => {
-    try {
-      const res = await fetch(
-        `/.netlify/functions/movies?searchTerm=${searchTerm}&searchType=${searchType}`
-      );
-      return await res.json();
-    } catch (err) {
-      console.error(err);
-    }
-  };
+
+  useEffect(() => {
+    const getMovies = async (searchTerm, searchType = "text") => {
+      try {
+        const res = await fetch(
+          `/.netlify/functions/movies?searchTerm=${searchTerm}&searchType=${searchType}`
+        );
+
+        const data = await res.json();
+        setSearchResults(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getMovies(searchTerm);
+  }, [searchTerm, setSearchResults]);
 
   return (
     <Fragment>
