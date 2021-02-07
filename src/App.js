@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import SearchBar from "./containers/SearchBar";
 import Header from "./components/Header";
 import SearchResults from "./containers/SearchResults";
 
 const App = () => {
+  const [inputValue, setInputValue] = useState("");
   return (
     <Fragment>
       <Header />
