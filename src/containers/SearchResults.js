@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect, useCallback } from "react";
 import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
 
@@ -23,6 +23,13 @@ const SearchResults = ({ searchTerm, playList, onAdd }) => {
     };
     getMovies(searchTerm);
   }, [searchTerm, setSearchResults]);
+
+  const checkIfAdded = useCallback(
+    (id) => {
+      return !!playList.find((entry) => entry.id === id);
+    },
+    [playList]
+  );
 
   return (
     <Fragment>
