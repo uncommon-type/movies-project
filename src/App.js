@@ -39,13 +39,13 @@ const App = () => {
   const handleCloseDialog = () => {
     setDialog(false);
     localStorage.removeItem("playlist");
+    setPlayList([]);
   };
 
   return (
     <Fragment>
       <Header />
       <SearchBar onSearch={handleSearch} />
-      <Dialog closeDialog={handleCloseDialog} />
       <main id="app__main-content">
         <article className="wrapper">
           <div className="main-content__body splitter gap-top-600">
@@ -57,6 +57,7 @@ const App = () => {
             />
           </div>
         </article>
+        <Dialog closeDialog={handleCloseDialog} />
       </main>
     </Fragment>
   );
