@@ -24,6 +24,10 @@ const App = () => {
     });
   };
 
+  const handleRemove = (id) => {
+    setPlayList((playList) => playList.filter((item) => item.id !== id));
+  };
+
   return (
     <Fragment>
       <Header />
