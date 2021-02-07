@@ -1,8 +1,9 @@
 import React from "react";
 
-const AddButton = ({ id, title, year, onAdd }) => (
+const AddButton = ({ id, title, year, onAdd, isAdded }) => (
   <button
     onClick={(event) => onAdd(id, title, year)}
+    disabled={isAdded}
     type="button"
     className="btn"
   >
