@@ -26,7 +26,7 @@ const SearchResults = ({ searchTerm }) => {
 
   return (
     <Fragment>
-      <MovieList />
+      <MovieList searchTerm={searchTerm} />
       <PlayList />
     </Fragment>
   );
