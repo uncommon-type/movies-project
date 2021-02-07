@@ -13,6 +13,10 @@ const SearchBar = ({ onSearch }) => {
     }, 1000);
   };
 
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="app__search wrapper">
       <form
