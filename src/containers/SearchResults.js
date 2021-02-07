@@ -4,7 +4,10 @@ import PlayList from "../components/PlayList";
 import ErrorMessage from "../components/ErrorMessage";
 
 const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchState, setSearchState] = useState({
+    searchTerm: "",
+    results: [],
+  });
   const [isSearchTriggered, setSearchTriggered] = useState(false);
 
   useEffect(() => {
