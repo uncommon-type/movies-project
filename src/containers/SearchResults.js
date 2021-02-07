@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect, useCallback } from "react";
 import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
+import ErrorMessage from "../components/ErrorMessage";
 
 const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
   const [searchResults, setSearchResults] = useState([]);
@@ -49,6 +50,8 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
       />
       <PlayList playList={playList} onRemove={onRemove} />
     </Fragment>
-  ) : null;
+  ) : (
+    <ErrorMessage />
+  );
 };
 export default SearchResults;
