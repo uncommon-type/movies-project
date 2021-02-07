@@ -8,6 +8,9 @@ const SearchBar = ({ onSearch }) => {
   const handleOnChange = (event) => {
     setSearchTerm(event.target.value);
     clearTimeout(searchTimeout.current);
+    searchTimeout.current = setTimeout(() => {
+      onSearch(event.target.value);
+    }, 1000);
   };
 
   return (
