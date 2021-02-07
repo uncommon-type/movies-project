@@ -31,7 +31,7 @@ const SearchResults = ({ searchTerm, playList, onAdd }) => {
         searchResults={searchResults}
         onAdd={onAdd}
       />
-      <PlayList />
+      <PlayList playList={playList} />
     </Fragment>
   );
 };
