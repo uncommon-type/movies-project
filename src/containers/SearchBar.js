@@ -9,7 +9,7 @@ const SearchBar = ({ onSearch }) => {
       setSearchTerm(searchQuery);
       onSearch(searchQuery);
     }
-  });
+  }, []);
 
   const searchTimeout = useRef(null);
 
