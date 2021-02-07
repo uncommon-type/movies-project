@@ -21,7 +21,7 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
         );
 
         const data = await res.json();
-        setSearchResults(data);
+        setSearchState({ searchTerm, results: data });
         setSearchTriggered(true);
       } catch (err) {
         console.error(err);
@@ -29,7 +29,7 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
       }
     };
     getMovies(searchTerm);
-  }, [searchTerm, setSearchResults]);
+  }, [searchTerm, setSearchState]);
 
   const checkIfAdded = useCallback(
     (id) => {
@@ -42,11 +42,11 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
     return null;
   }
 
-  return searchResults.length ? (
+  return searchState.results.length ? (
     <Fragment>
       <MovieList
-        searchTerm={searchTerm}
-        searchResults={searchResults}
+        searchTerm={searchState.searchTerm}
+        searchResults={searchState.results}
         onAdd={onAdd}
         checkIfAdded={checkIfAdded}
         onRemove={onRemove}
