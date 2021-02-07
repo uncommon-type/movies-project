@@ -40,6 +40,7 @@ const App = () => {
     <Fragment>
       <Header />
       <SearchBar onSearch={handleSearch} />
+      <Dialog closeDialog={handleCloseDialog} />
       <main id="app__main-content">
         <article className="wrapper">
           <div className="main-content__body splitter gap-top-600">
