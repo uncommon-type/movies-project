@@ -3,7 +3,11 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {});
+  useEffect(() => {
+    const searchQuery = localStorage.getItem("searchQuery") || "";
+    if (searchQuery) {
+    }
+  });
 
   const searchTimeout = useRef(null);
 
