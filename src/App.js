@@ -38,6 +38,7 @@ const App = () => {
 
   const handleCloseDialog = () => {
     setDialog(false);
+    localStorage.removeItem("playlist");
   };
 
   return (
