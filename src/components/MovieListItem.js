@@ -1,7 +1,7 @@
 import React from "react";
 import AddButton from "./AddButton";
 
-const MovieListItem = ({ id, title, year }) => (
+const MovieListItem = ({ id, title, year, onAdd }) => (
   <li className="movie-item">
     <div className="movie-item__body">
       <div className="movie-item__body__inner">
@@ -12,7 +12,7 @@ const MovieListItem = ({ id, title, year }) => (
           {title} ({year})
         </p>
       </div>
-      <AddButton id={id} />
+      <AddButton id={id} title={title} year={year} onAdd={onAdd} />
     </div>
   </li>
 );
