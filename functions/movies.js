@@ -15,7 +15,7 @@ exports.handler = async ({ queryStringParameters }) => {
     const data = await response.json();
     return {
       statusCode: 200,
-      body: JSON.stringify(data.Search),
+      body: JSON.stringify(data.Search || []),
     };
   } catch (error) {
     console.log(error);
