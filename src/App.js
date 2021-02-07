@@ -1,11 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import SearchBar from "./containers/SearchBar";
 import Header from "./components/Header";
 import SearchResults from "./containers/SearchResults";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
-  const [playList, setPlayList] = useState([]);
+  const [playList, setPlayList] = useState(
+    JSON.parse(localStorage.getItem("playList")) || []
+  );
 
   const handleSearch = async (searchTerm) => {
     setInputValue(searchTerm);
