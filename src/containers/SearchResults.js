@@ -7,6 +7,9 @@ const SearchResults = ({ searchTerm }) => {
 
   useEffect(() => {
     const getMovies = async (searchTerm, searchType = "text") => {
+      if (searchTerm.length <= 2) {
+        return;
+      }
       try {
         const res = await fetch(
           `/.netlify/functions/movies?searchTerm=${searchTerm}&searchType=${searchType}`
