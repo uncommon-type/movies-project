@@ -7,6 +7,7 @@ const SearchBar = ({ onSearch }) => {
     const searchQuery = localStorage.getItem("searchQuery") || "";
     if (searchQuery) {
       setSearchTerm(searchQuery);
+      onSearch(searchQuery);
     }
   });
 
