@@ -1,8 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
 
 const SearchResults = ({ searchTerm }) => {
+  const [searchResults, setSearchResults] = useState([]);
   const getMovies = async (searchTerm, searchType = "text") => {
     try {
       const res = await fetch(
