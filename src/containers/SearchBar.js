@@ -1,17 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const searchTimeout = useRef(null);
 
-  const handleOnChange = (event) => {
-    setSearchTerm(event.target.value);
-    clearTimeout(searchTimeout.current);
-    searchTimeout.current = setTimeout(() => {
-      onSearch(event.target.value);
-    }, 1000);
-  };
+  const handleOnChange = useCallback(
+    (event) => {
+      setSearchTerm(event.target.value);
+      localStorage.setItem("search", event.target.value);
+      clearTimeout(searchTimeout.current);
+      searchTimeout.current = setTimeout(() => {
+        onSearch(event.target.value);
+      }, 1000);
+    },
+    [onSearch, setSearchTerm, searchTimeout]
+  );
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
