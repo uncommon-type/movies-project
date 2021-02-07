@@ -37,6 +37,7 @@ const SearchResults = ({ searchTerm, playList, onAdd }) => {
         searchTerm={searchTerm}
         searchResults={searchResults}
         onAdd={onAdd}
+        checkIfAdded={checkIfAdded}
       />
       <PlayList playList={playList} />
     </Fragment>
