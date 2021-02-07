@@ -9,6 +9,7 @@ const App = () => {
   const [playList, setPlayList] = useState(
     JSON.parse(localStorage.getItem("playList")) || []
   );
+  const [isDialog, setDialog] = useState(true);
 
   useEffect(() => {
     localStorage.setItem("playList", JSON.stringify(playList));
