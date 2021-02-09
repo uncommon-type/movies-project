@@ -1,13 +1,13 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onInputChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const searchQuery = localStorage.getItem("searchQuery") || "";
     if (searchQuery) {
       setSearchTerm(searchQuery);
-      onSearch(searchQuery);
+      onInputChange(searchQuery);
     }
   }, []);
 
@@ -19,16 +19,17 @@ const SearchBar = ({ onSearch }) => {
       localStorage.setItem("searchQuery", event.target.value);
       clearTimeout(searchTimeout.current);
       searchTimeout.current = setTimeout(() => {
-        onSearch(event.target.value);
+        onInputChange(event.target.value);
       }, 1000);
     },
-    [onSearch, setSearchTerm, searchTimeout]
+    [onInputChange, setSearchTerm, searchTimeout]
   );
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
+    console.dir(event);
     clearTimeout(searchTimeout.current);
-    onSearch(event.target.elements.q.value);
+    onInputChange(event.target.elements.q.value);
   };
 
   return (
