@@ -15,7 +15,7 @@ const App = () => {
     localStorage.setItem("playList", JSON.stringify(playList));
   }, [playList]);
 
-  const handleSearch = async (searchTerm) => {
+  const handleInputChange = (searchTerm) => {
     setInputValue(searchTerm);
   };
 
@@ -45,7 +45,7 @@ const App = () => {
   return (
     <Fragment>
       <Header />
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleInputChange} />
       <main id="app__main-content">
         <article className="wrapper">
           <div className="main-content__body splitter gap-top-600">
