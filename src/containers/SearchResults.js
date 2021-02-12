@@ -5,7 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import { useLocation } from "react-router-dom";
 import { parse } from "query-string";
 
-const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
+const SearchResults = ({ playList, onAdd, onRemove }) => {
   const [searchState, setSearchState] = useState({
     searchTerm: "",
     results: [],
