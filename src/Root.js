@@ -15,10 +15,6 @@ const Root = () => {
     localStorage.setItem("playList", JSON.stringify(playList));
   }, [playList]);
 
-  const handleInputChange = (searchTerm) => {
-    setInputValue(searchTerm);
-  };
-
   const handleAdd = (id, title, year) => {
     setPlayList((playList) => {
       return [
