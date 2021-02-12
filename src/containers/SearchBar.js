@@ -20,7 +20,6 @@ const SearchBar = ({ onInputChange }) => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.dir(event);
     clearTimeout(searchTimeout.current);
     onInputChange(event.target.elements.q.value);
   };
