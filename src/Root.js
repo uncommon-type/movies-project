@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import SearchResults from "./containers/SearchResults";
 import Dialog from "./components/Dialog";
 
-const App = () => {
+const Root = () => {
   const [inputValue, setInputValue] = useState("");
   const [playList, setPlayList] = useState(
     JSON.parse(localStorage.getItem("playList")) || []
@@ -44,26 +44,28 @@ const App = () => {
   };
 
   return (
-    <Fragment>
+    <Router>
       <Header />
       <SearchBar onInputChange={handleInputChange} />
-      <main id="app__main-content">
-        <article className="wrapper">
-          <div className="main-content__body splitter gap-top-600">
-            <SearchResults
-              searchTerm={inputValue}
-              playList={playList}
-              onAdd={handleAdd}
-              onRemove={handleRemove}
-            />
-          </div>
-        </article>
-        {playList.length > 2 ? (
-          <Dialog closeDialog={handleCloseDialog} />
-        ) : null}
-      </main>
-    </Fragment>
+      <Fragment>
+        <main id="app__main-content">
+          <article className="wrapper">
+            <div className="main-content__body splitter gap-top-600">
+              <SearchResults
+                searchTerm={inputValue}
+                playList={playList}
+                onAdd={handleAdd}
+                onRemove={handleRemove}
+              />
+            </div>
+          </article>
+          {playList.length > 2 ? (
+            <Dialog closeDialog={handleCloseDialog} />
+          ) : null}
+        </main>
+      </Fragment>
+    </Router>
   );
 };
 
-export default App;
+export default Root;
