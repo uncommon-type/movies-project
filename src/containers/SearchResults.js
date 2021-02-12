@@ -9,6 +9,9 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
     searchTerm: "",
     results: [],
   });
+
+  const location = useLocation();
+
   const [isSearchTriggered, setSearchTriggered] = useState(false);
 
   useEffect(() => {
