@@ -3,6 +3,7 @@ import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
 import ErrorMessage from "../components/ErrorMessage";
 import { useLocation } from "react-router-dom";
+import { parse } from "query-string";
 
 const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
   const [searchState, setSearchState] = useState({
