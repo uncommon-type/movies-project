@@ -12,7 +12,7 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
   });
 
   const location = useLocation();
-  const { q: searchTerm } = location.search;
+  const { q: searchTerm } = parse(location.search);
 
   const [isSearchTriggered, setSearchTriggered] = useState(false);
 
