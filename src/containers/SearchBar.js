@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 const SearchBar = ({ onInputChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const history = useHistory();
+
   const searchTimeout = useRef(null);
 
   const handleOnChange = useCallback(
