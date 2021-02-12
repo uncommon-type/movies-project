@@ -11,7 +11,7 @@ const SearchResults = ({ searchTerm, playList, onAdd, onRemove }) => {
   });
 
   const location = useLocation();
-  const { q } = location.search;
+  const { q: searchTerm } = location.search;
 
   const [isSearchTriggered, setSearchTriggered] = useState(false);
 
