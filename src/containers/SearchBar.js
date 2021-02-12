@@ -9,7 +9,6 @@ const SearchBar = ({ onInputChange }) => {
   const handleOnChange = useCallback(
     (event) => {
       setSearchTerm(event.target.value);
-      localStorage.setItem("searchQuery", event.target.value);
       clearTimeout(searchTimeout.current);
       searchTimeout.current = setTimeout(() => {
         onInputChange(event.target.value);
