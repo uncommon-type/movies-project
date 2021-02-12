@@ -48,7 +48,6 @@ const Root = () => {
             <article className="wrapper">
               <div className="main-content__body splitter gap-top-600">
                 <SearchResults
-                  searchTerm={inputValue}
                   playList={playList}
                   onAdd={handleAdd}
                   onRemove={handleRemove}
