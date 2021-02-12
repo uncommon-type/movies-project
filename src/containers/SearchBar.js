@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-const SearchBar = ({ onInputChange }) => {
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const history = useHistory();

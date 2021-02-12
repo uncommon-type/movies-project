@@ -6,7 +6,6 @@ import SearchResults from "./containers/SearchResults";
 import Dialog from "./components/Dialog";
 
 const Root = () => {
-  const [inputValue, setInputValue] = useState("");
   const [playList, setPlayList] = useState(
     JSON.parse(localStorage.getItem("playList")) || []
   );
