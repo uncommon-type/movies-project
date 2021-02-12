@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchBar from "./containers/SearchBar";
 import Header from "./components/Header";
 import SearchResults from "./containers/SearchResults";
