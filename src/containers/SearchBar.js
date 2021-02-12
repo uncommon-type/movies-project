@@ -6,6 +6,13 @@ const SearchBar = ({ onInputChange }) => {
 
   const history = useHistory();
 
+  const onInputChange = useCallback(
+    (query) => {
+      history.push(`/search/?q=${query}`);
+    },
+    [history]
+  );
+
   const searchTimeout = useRef(null);
 
   const handleOnChange = useCallback(
