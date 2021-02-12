@@ -17,11 +17,14 @@ const SearchBar = ({ onInputChange }) => {
     [onInputChange, setSearchTerm, searchTimeout]
   );
 
-  const handleOnSubmit = (event) => {
-    event.preventDefault();
-    clearTimeout(searchTimeout.current);
-    onInputChange(event.target.elements.q.value);
-  };
+  const handleOnSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+      clearTimeout(searchTimeout.current);
+      onInputChange(event.target.elements.q.value);
+    },
+    [onInputChange, searchTimeout]
+  );
 
   return (
     <div className="app__search wrapper">
