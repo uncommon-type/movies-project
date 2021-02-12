@@ -47,23 +47,25 @@ const Root = () => {
     <Router>
       <Header />
       <SearchBar onInputChange={handleInputChange} />
-      <Fragment>
-        <main id="app__main-content">
-          <article className="wrapper">
-            <div className="main-content__body splitter gap-top-600">
-              <SearchResults
-                searchTerm={inputValue}
-                playList={playList}
-                onAdd={handleAdd}
-                onRemove={handleRemove}
-              />
-            </div>
-          </article>
-          {playList.length > 2 ? (
-            <Dialog closeDialog={handleCloseDialog} />
-          ) : null}
-        </main>
-      </Fragment>
+      <Route>
+        <Fragment>
+          <main id="app__main-content">
+            <article className="wrapper">
+              <div className="main-content__body splitter gap-top-600">
+                <SearchResults
+                  searchTerm={inputValue}
+                  playList={playList}
+                  onAdd={handleAdd}
+                  onRemove={handleRemove}
+                />
+              </div>
+            </article>
+            {playList.length > 2 ? (
+              <Dialog closeDialog={handleCloseDialog} />
+            ) : null}
+          </main>
+        </Fragment>
+      </Route>
     </Router>
   );
 };
