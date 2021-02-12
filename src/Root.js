@@ -41,7 +41,7 @@ const Root = () => {
   return (
     <Router>
       <Header />
-      <SearchBar onInputChange={handleInputChange} />
+      <SearchBar />
       <Route path={`/search/`}>
         <Fragment>
           <main id="app__main-content">
