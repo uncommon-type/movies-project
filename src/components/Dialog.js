@@ -1,9 +1,12 @@
 import React from "react";
 
+import FireworkIcon from "../Icons/Firework.js";
+
 const Dialog = ({ closeDialog }) => (
   <div id="dialog">
     <div className="dialog__inner">
-      <p id="dialog-content">🎉 Yay! You've selected 3 movies</p>
+      <FireworkIcon className="firework" />
+      <p id="dialog-content">You've selected 5 movies</p>
       <button onClick={closeDialog} id="dialog-content__close-button">
         Okay
       </button>
