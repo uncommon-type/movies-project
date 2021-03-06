@@ -20,8 +20,6 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
   const location = useLocation();
   const { q: searchTerm } = parse(location.search);
 
-  const [isSearchTriggered, setSearchTriggered] = useState(false);
-
   useEffect(() => {
     const getMovies = async (searchTerm, searchType = "text") => {
       if (!searchTerm || searchTerm.length <= 2) {
@@ -60,7 +58,7 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
     [playList]
   );
 
-  if (!isSearchTriggered) {
+  if (status === "idle") {
     return null;
   }
 
