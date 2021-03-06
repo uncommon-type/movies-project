@@ -62,6 +62,14 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
     return null;
   }
 
+  if (status === "pending") {
+    return (
+      <div className="spinner-container wrapper">
+        <Spinner />
+      </div>
+    );
+  }
+
   return searchState.results.length ? (
     <Fragment>
       <MovieList
