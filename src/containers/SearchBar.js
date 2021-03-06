@@ -38,6 +38,7 @@ const SearchBar = () => {
   return (
     <div className="app__search wrapper">
       <form
+        autoComplete="off"
         onSubmit={handleOnSubmit}
         className="app__search__controls"
         action="/search"
