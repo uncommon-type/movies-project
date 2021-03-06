@@ -6,7 +6,7 @@ const SearchBar = () => {
 
   const history = useHistory();
 
-  const onInputChange = useCallback(
+  const updateURL = useCallback(
     (query) => {
       history.push(`/search/?q=${query}`);
     },
@@ -20,19 +20,19 @@ const SearchBar = () => {
       setSearchTerm(event.target.value);
       clearTimeout(searchTimeout.current);
       searchTimeout.current = setTimeout(() => {
-        onInputChange(event.target.value);
+        updateURL(event.target.value);
       }, 1000);
     },
-    [onInputChange, setSearchTerm, searchTimeout]
+    [updateURL, setSearchTerm, searchTimeout]
   );
 
   const handleOnSubmit = useCallback(
     (event) => {
       event.preventDefault();
       clearTimeout(searchTimeout.current);
-      onInputChange(event.target.elements.q.value);
+      updateURL(event.target.elements.q.value);
     },
-    [onInputChange, searchTimeout]
+    [updateURL, searchTimeout]
   );
 
   return (
