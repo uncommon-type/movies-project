@@ -37,10 +37,17 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
 
         const data = await res.json();
         setSearchState({ searchTerm, results: data });
-        setSearchTriggered(true);
-      } catch (err) {
-        console.error(err);
-        setSearchTriggered(true);
+        if (data.Response === "False") {
+          const error = new Error(data.Error);
+          setError(error);
+          setStatus("rejected");
+        } else {
+          setStatus("resolved");
+        }
+      } catch (error) {
+        console.error(error);
+        setError(error);
+        setStatus("rejected");
       }
     };
     getMovies(searchTerm);
