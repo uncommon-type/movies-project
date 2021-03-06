@@ -55,7 +55,7 @@ const Root = () => {
               />
             </div>
           </article>
-          {playList.length > 2 ? (
+          {playList.length > 4 ? (
             <Dialog closeDialog={handleCloseDialog} />
           ) : null}
         </main>
