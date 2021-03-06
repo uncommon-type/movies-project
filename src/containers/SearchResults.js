@@ -70,6 +70,10 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
     );
   }
 
+  if (status === "rejected") {
+    return <ErrorMessage error={error} />;
+  }
+
   return searchState.results.length ? (
     <Fragment>
       <MovieList
