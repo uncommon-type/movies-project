@@ -1,9 +1,12 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
-import MovieList from "../components/MovieList";
-import PlayList from "../components/PlayList";
-import ErrorMessage from "../components/ErrorMessage";
+
 import { useLocation } from "react-router-dom";
 import { parse } from "query-string";
+
+import MovieList from "../components/MovieList";
+import PlayList from "../components/PlayList";
+import Spinner from "../components/Spinner";
+import ErrorMessage from "../components/ErrorMessage";
 
 const SearchResults = ({ playList, onAdd, onRemove }) => {
   const [searchState, setSearchState] = useState({
