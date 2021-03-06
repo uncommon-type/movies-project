@@ -1,5 +1,6 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import SearchBar from "./containers/SearchBar";
 import Header from "./components/Header";
 import SearchResults from "./containers/SearchResults";
@@ -42,23 +43,21 @@ const Root = () => {
     <Router>
       <Header />
       <SearchBar />
-      <Route path={`/search/`}>
-        <Fragment>
-          <main id="app__main-content">
-            <article className="wrapper">
-              <div className="main-content__body splitter gap-top-600">
-                <SearchResults
-                  playList={playList}
-                  onAdd={handleAdd}
-                  onRemove={handleRemove}
-                />
-              </div>
-            </article>
-            {playList.length > 2 ? (
-              <Dialog closeDialog={handleCloseDialog} />
-            ) : null}
-          </main>
-        </Fragment>
+      <Route path="/search">
+        <main id="app__main-content">
+          <article className="wrapper">
+            <div className="main-content__body splitter gap-top-600">
+              <SearchResults
+                playList={playList}
+                onAdd={handleAdd}
+                onRemove={handleRemove}
+              />
+            </div>
+          </article>
+          {playList.length > 2 ? (
+            <Dialog closeDialog={handleCloseDialog} />
+          ) : null}
+        </main>
       </Route>
     </Router>
   );
