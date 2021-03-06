@@ -27,6 +27,9 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
       if (!searchTerm || searchTerm.length <= 2) {
         return;
       }
+
+      setStatus("pending");
+
       try {
         const res = await fetch(
           `/.netlify/functions/search?searchTerm=${searchTerm}&searchType=${searchType}`
