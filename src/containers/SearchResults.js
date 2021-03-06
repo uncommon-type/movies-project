@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import { useLocation } from "react-router-dom";
 import { parse } from "query-string";
@@ -78,19 +78,21 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
     return <ErrorMessage />;
   }
 
-  return searchState.results.length ? (
-    <Fragment>
-      <MovieList
-        searchTerm={searchState.searchTerm}
-        searchResults={searchState.results}
-        onAdd={onAdd}
-        checkIfAdded={checkIfAdded}
-        onRemove={onRemove}
-      />
-      <PlayList playList={playList} onRemove={onRemove} />
-    </Fragment>
-  ) : (
-    <ErrorMessage />
-  );
+  if (status === "resolved") {
+    return (
+      <article className="app__main-content">
+        <div className="main-content__body gap-top-600">
+          <MovieList
+            searchTerm={searchState.searchTerm}
+            searchResults={searchState.results}
+            onAdd={onAdd}
+            checkIfAdded={checkIfAdded}
+            onRemove={onRemove}
+          />
+          <PlayList playList={playList} onRemove={onRemove} />
+        </div>
+      </article>
+    );
+  }
 };
 export default SearchResults;
