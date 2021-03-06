@@ -15,6 +15,7 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
   });
 
   const [status, setStatus] = useState("idle");
+  const [error, setError] = useState(null);
 
   const location = useLocation();
   const { q: searchTerm } = parse(location.search);
