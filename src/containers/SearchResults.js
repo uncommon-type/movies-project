@@ -23,7 +23,7 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
       }
       try {
         const res = await fetch(
-          `/.netlify/functions/movies?searchTerm=${searchTerm}&searchType=${searchType}`
+          `/.netlify/functions/search?searchTerm=${searchTerm}&searchType=${searchType}`
         );
 
         const data = await res.json();
