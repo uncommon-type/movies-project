@@ -6,6 +6,7 @@ const ViewSingleMovie = () => {
   const [movie, setMovie] = useState([]);
 
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     const getMovies = async (id, searchType) => {
