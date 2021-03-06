@@ -24,7 +24,7 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
 
   useEffect(() => {
     const getMovies = async (searchTerm, searchType = "text") => {
-      if (searchTerm.length <= 2) {
+      if (!searchTerm || searchTerm.length <= 2) {
         return;
       }
       try {
