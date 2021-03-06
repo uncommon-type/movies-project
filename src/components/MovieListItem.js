@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import AddButton from "./AddButton";
 
 const MovieListItem = ({ id, title, year, onAdd, isAdded }) => (
