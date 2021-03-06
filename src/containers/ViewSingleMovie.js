@@ -93,7 +93,9 @@ const ViewSingleMovie = () => {
           </ol>
 
           <div className="stack">
-            <button className="btn button">Back</button>
+            <button onClick={handleBackNavigation} className="btn button">
+              Back
+            </button>
           </div>
         </div>
       </div>
