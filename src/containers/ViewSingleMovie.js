@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 const ViewSingleMovie = () => {
   const [movie, setMovie] = useState([]);
 
+  const { id } = useParams();
+
   useEffect(() => {
     const getMovies = async (id, searchType) => {
       try {
