@@ -60,6 +60,9 @@ const Root = () => {
           ) : null}
         </main>
       </Route>
+      <Route path="/movie/:id">
+        <ViewSingleMovie />
+      </Route>
     </Router>
   );
 };
