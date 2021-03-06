@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchBar from "./containers/SearchBar";
 import Header from "./components/Header";
 import SearchResults from "./containers/SearchResults";
+import ViewSingleMovie from "./containers/ViewSingleMovie";
 import Dialog from "./components/Dialog";
 
 const Root = () => {
