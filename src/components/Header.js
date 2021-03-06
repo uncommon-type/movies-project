@@ -1,10 +1,14 @@
 import React from "react";
 
+import LogoIcon from "../Icons/Logo.js";
+
 const Header = () => (
   <header className="app__header">
-    <div className="app__header__inner">
-      <h1 className="headline text-400 md:text-600">Movie App</h1>
-    </div>
+    <h1>
+      <LogoIcon className="app__header__logo" />
+      Movie App
+    </h1>
+    <p>Build your want-to-see-list</p>
   </header>
 );
 
