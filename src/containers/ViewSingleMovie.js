@@ -8,6 +8,10 @@ const ViewSingleMovie = () => {
   const { id } = useParams();
   const history = useHistory();
 
+  const handleBackNavigation = () => {
+    history.goBack();
+  };
+
   useEffect(() => {
     const getMovies = async (id, searchType) => {
       try {
