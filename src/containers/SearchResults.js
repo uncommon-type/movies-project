@@ -74,6 +74,10 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
     return <ErrorMessage error={error} />;
   }
 
+  if (status === "resolved" && searchState.results.length === 0) {
+    return <ErrorMessage />;
+  }
+
   return searchState.results.length ? (
     <Fragment>
       <MovieList
