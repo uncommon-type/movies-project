@@ -54,7 +54,7 @@ const ViewSingleMovie = () => {
             </figure>
           </div>
 
-          <div className="flow flow-space-300">
+          <div className="flow">
             <span className="plot text-400 lg:text-800">{movie.Plot}</span>
           </div>
         </div>
@@ -62,27 +62,27 @@ const ViewSingleMovie = () => {
         <div className="movie-summary-group">
           <h3 className="movie-summary__title text-700">Key Details</h3>
           <ol className="movie-summary__key-facts__list auto-grid">
-            <li className="flow flow-space-300">
+            <li className="flow">
               <span className="text-700 lg:text-800">
                 {movie.BoxOffice || "N/A"}
               </span>
               <span className="text-600 lg:text-700">BoxOffice</span>
             </li>
-            <li className="flow flow-space-300">
+            <li className="flow">
               <span className="text-700 lg:text-800">
                 {movie.IMDBRating || "N/A"}
               </span>
               <span className="text-600 lg:text-700">IMDB Rating</span>
             </li>
-            <li className="flow flow-space-300">
+            <li className="flow">
               <span className="text-700 lg:text-800">{movie.Awards}</span>
               <span className="text-600 lg:text-700">Awards</span>
             </li>
-            <li className="flow flow-space-300">
+            <li className="flow">
               <span className="text-700 lg:text-800">{movie.Director}</span>
               <span className="text-600 lg:text-700">Director</span>
             </li>
-            <li className="flow flow-space-300">
+            <li className="flow">
               <span className="text-700 lg:text-800">{movie.Actors}</span>
               <span className="text-600 lg:text-700">Actors</span>
             </li>
