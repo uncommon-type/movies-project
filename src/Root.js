@@ -45,16 +45,13 @@ const Root = () => {
       <Header />
       <SearchBar />
       <Route path="/search">
-        <main id="app__main-content">
-          <article className="wrapper">
-            <div className="main-content__body splitter gap-top-600">
-              <SearchResults
-                playList={playList}
-                onAdd={handleAdd}
-                onRemove={handleRemove}
-              />
-            </div>
-          </article>
+        <main>
+          <SearchResults
+            playList={playList}
+            onAdd={handleAdd}
+            onRemove={handleRemove}
+          />
+
           {playList.length > 4 ? (
             <Dialog closeDialog={handleCloseDialog} />
           ) : null}
