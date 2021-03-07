@@ -45,7 +45,7 @@ const ViewSingleMovie = () => {
                   alt={movie.Title}
                 />
               </div>
-              <figcaption className="movie-details leading-tight">
+              <figcaption className="movie-details">
                 <span className="movie__title font-sans weight-bold">
                   {movie.Title}
                 </span>
@@ -55,48 +55,40 @@ const ViewSingleMovie = () => {
           </div>
 
           <div className="flow flow-space-300">
-            <span className="plot text-400 lg:text-800 color-secondary-glare">
-              {movie.Plot}
-            </span>
+            <span className="plot text-400 lg:text-800">{movie.Plot}</span>
           </div>
         </div>
 
         <div className="movie-summary-group">
-          <h3 className="movie-summary-group__title text-700">Key Details</h3>
-          <ol className="key-facts__list auto-grid">
+          <h3 className="movie-summary__title text-700">Key Details</h3>
+          <ol className="movie-summary__key-facts__list auto-grid">
             <li className="flow flow-space-300">
-              <span className="text-700 lg:text-800 color-secondary-glare">
+              <span className="text-700 lg:text-800">
                 {movie.BoxOffice || "N/A"}
               </span>
               <span className="text-600 lg:text-700">BoxOffice</span>
             </li>
             <li className="flow flow-space-300">
-              <span className="text-700 lg:text-800 color-secondary-glare">
+              <span className="text-700 lg:text-800">
                 {movie.IMDBRating || "N/A"}
               </span>
               <span className="text-600 lg:text-700">IMDB Rating</span>
             </li>
             <li className="flow flow-space-300">
-              <span className="text-700 lg:text-800 color-secondary-glare">
-                {movie.Awards}
-              </span>
+              <span className="text-700 lg:text-800">{movie.Awards}</span>
               <span className="text-600 lg:text-700">Awards</span>
             </li>
             <li className="flow flow-space-300">
-              <span className="text-700 lg:text-800 color-secondary-glare">
-                {movie.Director}
-              </span>
+              <span className="text-700 lg:text-800">{movie.Director}</span>
               <span className="text-600 lg:text-700">Director</span>
             </li>
             <li className="flow flow-space-300">
-              <span className="text-700 lg:text-800 color-secondary-glare">
-                {movie.Actors}
-              </span>
+              <span className="text-700 lg:text-800">{movie.Actors}</span>
               <span className="text-600 lg:text-700">Actors</span>
             </li>
           </ol>
 
-          <div className="stack">
+          <div className="movie-summary__button-container">
             <button onClick={handleBackNavigation} className="btn button">
               Back
             </button>
