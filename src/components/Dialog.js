@@ -7,7 +7,7 @@ const Dialog = ({ closeDialog }) => (
     <div className="dialog__inner">
       <FireworkIcon className="firework" />
       <p id="dialog-content">You've selected 5 movies</p>
-      <button onClick={closeDialog} id="dialog-content__close-button">
+      <button onClick={closeDialog} className="btn">
         Okay
       </button>
     </div>
