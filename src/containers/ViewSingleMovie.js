@@ -64,7 +64,7 @@ const ViewSingleMovie = () => {
     };
 
     getMovieDetails(id, "id");
-  }, [id]);
+  }, [id, appDispatch]);
 
   if (appState.status === "idle") {
     return null;
