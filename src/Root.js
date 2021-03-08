@@ -56,10 +56,6 @@ const Root = () => {
     localStorage.setItem("playList", JSON.stringify(state.playList));
   }, [state.playList]);
 
-  // const handleRemove = (id) => {
-  //   setPlayList((playList) => playList.filter((item) => item.id !== id));
-  // };
-
   const handleCloseDialog = () => {
     dispatch({ type: "UPDATE_PLAYLIST", payload: [] });
   };
