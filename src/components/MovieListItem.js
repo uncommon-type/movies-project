@@ -7,6 +7,8 @@ import AddButton from "./AddButton";
 import StarIcon from "../Icons/Star.js";
 
 const MovieListItem = ({ id, title, year, isAdded }) => {
+  const appDispatch = useContext(DispatchContext);
+
   const handleAdd = () => {};
 
   return (
