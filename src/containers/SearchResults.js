@@ -11,7 +11,7 @@ import PlayList from "../components/PlayList";
 import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
 
-const SearchResults = ({ playList }) => {
+const SearchResults = () => {
   const appState = useContext(StateContext);
   const appDispatch = useContext(DispatchContext);
 
@@ -90,7 +90,7 @@ const SearchResults = ({ playList }) => {
             searchResults={appState.searchResults}
             checkIfAdded={checkIfAdded}
           />
-          <PlayList playList={playList} />
+          <PlayList />
         </div>
       </article>
     );
