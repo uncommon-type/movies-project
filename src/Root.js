@@ -36,6 +36,9 @@ const Root = () => {
             },
           ],
         };
+
+      default:
+        return state;
     }
   };
 
