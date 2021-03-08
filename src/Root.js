@@ -22,7 +22,7 @@ const Root = () => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "UPDATE_PLAYLIST":
-        return {};
+        return { ...state, playList: action.payload };
     }
   };
 
