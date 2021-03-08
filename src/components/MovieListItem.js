@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import AddButton from "./AddButton";
 import StarIcon from "../Icons/Star.js";
 
-const MovieListItem = ({ id, title, year, onAdd, isAdded }) => (
+const MovieListItem = ({ id, title, year, isAdded }) => (
   <li className="movie-item">
     <div className="movie-item__body">
       <Link to={`/movie/${id}`}>
@@ -15,13 +15,7 @@ const MovieListItem = ({ id, title, year, onAdd, isAdded }) => (
           </p>
         </div>
       </Link>
-      <AddButton
-        id={id}
-        title={title}
-        year={year}
-        onAdd={onAdd}
-        isAdded={isAdded}
-      />
+      <AddButton id={id} title={title} year={year} isAdded={isAdded} />
     </div>
   </li>
 );
