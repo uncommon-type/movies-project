@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { useParams, useHistory } from "react-router-dom";
 
 const ViewSingleMovie = () => {
-  const [movie, setMovie] = useState([]);
-
   const { id } = useParams();
   const history = useHistory();
 
