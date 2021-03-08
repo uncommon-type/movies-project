@@ -13,6 +13,8 @@ import ErrorMessage from "../components/ErrorMessage";
 
 const SearchResults = ({ playList }) => {
   const appState = useContext(StateContext);
+  const appDispatch = useContext(DispatchContext);
+
   const [searchState, setSearchState] = useState({
     searchTerm: "",
     results: [],
