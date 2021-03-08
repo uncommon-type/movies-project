@@ -21,6 +21,8 @@ const Root = () => {
 
   const reducer = (state, action) => {};
 
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   useEffect(() => {
     localStorage.setItem("playList", JSON.stringify(playList));
   }, [playList]);
