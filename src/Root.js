@@ -52,7 +52,7 @@ const Root = () => {
         return { ...state, error: action.payload.error };
 
       case "UPDATE_STATUS":
-        return {};
+        return { ...state, status: action.payload.status };
 
       default:
         return state;
