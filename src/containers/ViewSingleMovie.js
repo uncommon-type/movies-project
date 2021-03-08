@@ -2,6 +2,9 @@ import React, { useEffect, useContext } from "react";
 
 import { useParams, useHistory } from "react-router-dom";
 
+import StateContext from "../StateContext";
+import DispatchContext from "../DispatchContext";
+
 const ViewSingleMovie = () => {
   const { id } = useParams();
   const history = useHistory();
