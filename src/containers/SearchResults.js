@@ -65,7 +65,7 @@ const SearchResults = ({ playList }) => {
     [appState.playList]
   );
 
-  if (status === "idle") {
+  if (appState.status === "idle") {
     return null;
   }
 
