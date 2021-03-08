@@ -9,6 +9,8 @@ import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
 
 const ViewSingleMovie = () => {
+  const appState = useContext(StateContext);
+
   const { id } = useParams();
   const history = useHistory();
 
