@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useEffect, useCallback, useContext } from "react";
 
 import { useLocation } from "react-router-dom";
 import { parse } from "query-string";
@@ -14,14 +14,6 @@ import ErrorMessage from "../components/ErrorMessage";
 const SearchResults = ({ playList }) => {
   const appState = useContext(StateContext);
   const appDispatch = useContext(DispatchContext);
-
-  const [searchState, setSearchState] = useState({
-    searchTerm: "",
-    results: [],
-  });
-
-  const [status, setStatus] = useState("idle");
-  const [error, setError] = useState(null);
 
   const location = useLocation();
   const { q: searchTerm } = parse(location.search);
