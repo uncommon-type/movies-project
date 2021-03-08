@@ -23,6 +23,9 @@ const Root = () => {
     switch (action.type) {
       case "UPDATE_PLAYLIST":
         return { ...state, playList: action.payload };
+
+      case "ADD_TO_PLAYLIST":
+        return {};
     }
   };
 
