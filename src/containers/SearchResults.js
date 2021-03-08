@@ -77,8 +77,8 @@ const SearchResults = ({ playList }) => {
     );
   }
 
-  if (status === "rejected") {
-    return <ErrorMessage error={error} />;
+  if (appState.status === "rejected") {
+    return <ErrorMessage error={appState.error} />;
   }
 
   if (status === "resolved" && searchState.results.length === 0) {
