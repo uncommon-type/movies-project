@@ -17,7 +17,7 @@ const PlayListItem = ({ id, title, year, onRemove }) => {
             {title} ({year})
           </p>
         </div>
-        <RemoveButton id={id} onRemove={onRemove} />
+        <RemoveButton onClick={handleRemove} id={id} />
       </div>
     </li>
   );
