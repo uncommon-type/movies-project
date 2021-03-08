@@ -45,6 +45,9 @@ const Root = () => {
           ),
         };
 
+      case "UPDATE_SEARCH_RESULTS":
+        return {};
+
       default:
         return state;
     }
@@ -69,7 +72,6 @@ const Root = () => {
           <Route path="/search">
             <main>
               <SearchResults playList={state.playList} />
-
               {state.playList.length > 4 ? (
                 <Dialog closeDialog={handleCloseDialog} />
               ) : null}
