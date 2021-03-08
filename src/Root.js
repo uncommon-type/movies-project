@@ -62,7 +62,9 @@ const Root = () => {
   //   setPlayList((playList) => playList.filter((item) => item.id !== id));
   // };
 
-  const handleCloseDialog = () => {};
+  const handleCloseDialog = () => {
+    dispatch({ type: "UPDATE_PLAYLIST", payload: [] });
+  };
 
   return (
     <Router>
