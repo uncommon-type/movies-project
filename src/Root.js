@@ -51,6 +51,9 @@ const Root = () => {
       case "UPDATE_ERROR":
         return { ...state, error: action.payload.error };
 
+      case "UPDATE_STATUS":
+        return {};
+
       default:
         return state;
     }
