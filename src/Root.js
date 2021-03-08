@@ -25,7 +25,17 @@ const Root = () => {
         return { ...state, playList: action.payload };
 
       case "ADD_TO_PLAYLIST":
-        return {};
+        return {
+          ...state,
+          playList: [
+            ...state.playList,
+            {
+              id: action.payload.id,
+              title: action.payload.title,
+              year: action.payload.year,
+            },
+          ],
+        };
     }
   };
 
