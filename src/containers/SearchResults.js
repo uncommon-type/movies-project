@@ -69,7 +69,7 @@ const SearchResults = ({ playList }) => {
     return null;
   }
 
-  if (status === "pending") {
+  if (appState.status === "pending") {
     return (
       <div className="spinner-container wrapper">
         <Spinner />
