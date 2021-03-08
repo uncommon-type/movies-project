@@ -58,14 +58,11 @@ const Root = () => {
     });
   };
 
-  const handleRemove = (id) => {
-    setPlayList((playList) => playList.filter((item) => item.id !== id));
-  };
+  // const handleRemove = (id) => {
+  //   setPlayList((playList) => playList.filter((item) => item.id !== id));
+  // };
 
-  const handleCloseDialog = () => {
-    localStorage.removeItem("playlist");
-    setPlayList([]);
-  };
+  const handleCloseDialog = () => {};
 
   return (
     <Router>
