@@ -15,7 +15,13 @@ const MovieListItem = ({ id, title, year, isAdded }) => (
           </p>
         </div>
       </Link>
-      <AddButton id={id} title={title} year={year} isAdded={isAdded} />
+      <AddButton
+        onClick={handleAdd}
+        id={id}
+        title={title}
+        year={year}
+        isAdded={isAdded}
+      />
     </div>
   </li>
 );
