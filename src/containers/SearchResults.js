@@ -12,6 +12,7 @@ import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
 
 const SearchResults = ({ playList }) => {
+  const appState = useContext(StateContext);
   const [searchState, setSearchState] = useState({
     searchTerm: "",
     results: [],
