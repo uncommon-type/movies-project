@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import StateContext from "./StateContext";
@@ -20,9 +20,6 @@ const Root = () => {
   };
 
   const reducer = (state, action) => {};
-  const [playList, setPlayList] = useState(
-    JSON.parse(localStorage.getItem("playList")) || []
-  );
 
   useEffect(() => {
     localStorage.setItem("playList", JSON.stringify(playList));
@@ -46,7 +43,6 @@ const Root = () => {
   };
 
   const handleCloseDialog = () => {
-    setDialog(false);
     localStorage.removeItem("playlist");
     setPlayList([]);
   };
