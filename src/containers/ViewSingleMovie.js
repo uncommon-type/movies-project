@@ -70,6 +70,14 @@ const ViewSingleMovie = () => {
     return null;
   }
 
+  if (appState.status === "pending") {
+    return (
+      <div className="spinner-container wrapper">
+        <Spinner />
+      </div>
+    );
+  }
+
   return (
     <article className="wrapper">
       <div className="wrapper__inner splitter gap-top-600">
