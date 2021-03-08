@@ -64,7 +64,7 @@ const ViewSingleMovie = () => {
     };
 
     getMovieDetails(id, "id");
-  }, [id, setMovie]);
+  }, [id]);
 
   return (
     <article className="wrapper">
