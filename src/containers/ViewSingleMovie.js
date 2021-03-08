@@ -5,6 +5,9 @@ import { useParams, useHistory } from "react-router-dom";
 import StateContext from "../StateContext";
 import DispatchContext from "../DispatchContext";
 
+import Spinner from "../components/Spinner";
+import ErrorMessage from "../components/ErrorMessage";
+
 const ViewSingleMovie = () => {
   const { id } = useParams();
   const history = useHistory();
