@@ -75,12 +75,11 @@ const Root = () => {
           <Route path="/search">
             <main>
               <SearchResults
-                playList={playList}
-                onAdd={handleAdd}
+                playList={state.playList}
                 onRemove={handleRemove}
               />
 
-              {playList.length > 4 ? (
+              {state.playList.length > 4 ? (
                 <Dialog closeDialog={handleCloseDialog} />
               ) : null}
             </main>
