@@ -46,7 +46,7 @@ const Root = () => {
         };
 
       case "UPDATE_SEARCH_RESULTS":
-        return {};
+        return { ...state, searchResults: action.payload.searchResults };
 
       default:
         return state;
