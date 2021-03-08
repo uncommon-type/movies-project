@@ -37,6 +37,9 @@ const Root = () => {
           ],
         };
 
+      case "REMOVE_FROM_PLAYLIST":
+        return {};
+
       default:
         return state;
     }
