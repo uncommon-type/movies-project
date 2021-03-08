@@ -8,7 +8,7 @@ import PlayList from "../components/PlayList";
 import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
 
-const SearchResults = ({ playList, onAdd, onRemove }) => {
+const SearchResults = ({ playList, onRemove }) => {
   const [searchState, setSearchState] = useState({
     searchTerm: "",
     results: [],
@@ -85,7 +85,6 @@ const SearchResults = ({ playList, onAdd, onRemove }) => {
           <MovieList
             searchTerm={searchState.searchTerm}
             searchResults={searchState.results}
-            onAdd={onAdd}
             checkIfAdded={checkIfAdded}
             onRemove={onRemove}
           />
