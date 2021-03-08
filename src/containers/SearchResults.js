@@ -32,18 +32,27 @@ const SearchResults = ({ playList }) => {
         );
 
         const data = await res.json();
-        setSearchState({ searchTerm, results: data });
-        if (data.Response === "False") {
-          const error = new Error(data.Error);
-          setError(error);
-          setStatus("rejected");
+        if (data.length === 0) {
+          const error = new Error("Not found");
+          appDispatch({ type: "UPDATE_ERROR", payload: { error: error } });
+          appDispatch({
+            type: "UPDATE_STATUS",
+            payload: { status: "rejected" },
+          });
         } else {
-          setStatus("resolved");
+          appDispatch({
+            type: "UPDATE_SEARCH_RESULTS",
+            payload: { searchResults: data },
+          });
+          appDispatch({
+            type: "UPDATE_STATUS",
+            payload: { status: "resolved" },
+          });
         }
       } catch (error) {
         console.error(error);
-        setError(error);
-        setStatus("rejected");
+        appDispatch({ type: "UPDATE_ERROR", payload: { error: error } });
+        appDispatch({ type: "UPDATE_STATUS", payload: { status: "rejected" } });
       }
     };
     getMovies(searchTerm);
