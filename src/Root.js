@@ -42,8 +42,8 @@ const Root = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    localStorage.setItem("playList", JSON.stringify(playList));
-  }, [playList]);
+    localStorage.setItem("playList", JSON.stringify(state.playList));
+  }, [state.playList]);
 
   const handleAdd = (id, title, year) => {
     setPlayList((playList) => {
