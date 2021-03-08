@@ -2,7 +2,7 @@ import React from "react";
 
 import ButtonCheckIcon from "../Icons/Buttoncheck.js";
 
-const AddButton = ({ id, title, year, onAdd, isAdded, onClick }) => (
+const AddButton = ({ isAdded, onClick }) => (
   <button
     onClick={onClick}
     disabled={isAdded}
