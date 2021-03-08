@@ -251,11 +251,15 @@ select {
                  Spinner
 \*--------------------------------------------------------------------------*/
 
-.spinner-container {
+#spinner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  max-width: 65rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
 }
 
 .spinner {
