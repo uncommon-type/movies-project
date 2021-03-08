@@ -67,26 +67,30 @@ const Root = () => {
   };
 
   return (
-    <Router>
-      <Header />
-      <SearchBar />
-      <Route path="/search">
-        <main>
-          <SearchResults
-            playList={playList}
-            onAdd={handleAdd}
-            onRemove={handleRemove}
-          />
+    <StateContext.Provider>
+      <DispatchContext.Provider>
+        <Router>
+          <Header />
+          <SearchBar />
+          <Route path="/search">
+            <main>
+              <SearchResults
+                playList={playList}
+                onAdd={handleAdd}
+                onRemove={handleRemove}
+              />
 
-          {playList.length > 4 ? (
-            <Dialog closeDialog={handleCloseDialog} />
-          ) : null}
-        </main>
-      </Route>
-      <Route path="/movie/:id">
-        <ViewSingleMovie />
-      </Route>
-    </Router>
+              {playList.length > 4 ? (
+                <Dialog closeDialog={handleCloseDialog} />
+              ) : null}
+            </main>
+          </Route>
+          <Route path="/movie/:id">
+            <ViewSingleMovie />
+          </Route>
+        </Router>
+      </DispatchContext.Provider>
+    </StateContext.Provider>
   );
 };
 
