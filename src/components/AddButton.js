@@ -2,9 +2,9 @@ import React from "react";
 
 import ButtonCheckIcon from "../Icons/Buttoncheck.js";
 
-const AddButton = ({ id, title, year, onAdd, isAdded }) => (
+const AddButton = ({ id, title, year, onAdd, isAdded, onClick }) => (
   <button
-    onClick={(event) => onAdd(id, title, year)}
+    onClick={onClick}
     disabled={isAdded}
     aria-pressed={isAdded}
     type="button"
