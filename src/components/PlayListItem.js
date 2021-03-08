@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 
 import DispatchContext from "../DispatchContext";
 
-import RemoveButton from "./RemoveButton";
 import StarIcon from "../Icons/Star.js";
 
 const PlayListItem = ({ id, title, year }) => {
@@ -21,7 +20,9 @@ const PlayListItem = ({ id, title, year }) => {
             {title} ({year})
           </p>
         </div>
-        <RemoveButton onClick={handleRemove} id={id} />
+        <button onClick={handleRemove} type="button" className="btn">
+          <span className="btn__txt">Remove</span>
+        </button>
       </div>
     </li>
   );
