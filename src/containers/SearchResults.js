@@ -3,6 +3,9 @@ import React, { useState, useEffect, useCallback, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { parse } from "query-string";
 
+import StateContext from "../StateContext";
+import DispatchContext from "../DispatchContext";
+
 import MovieList from "../components/MovieList";
 import PlayList from "../components/PlayList";
 import Spinner from "../components/Spinner";
