@@ -110,7 +110,7 @@ select {
 .text-700 {
   display: block;
   margin-top: 1.5rem;
-  color: hsl(188, 100%, 90%);
+  color: rgba(0, 255, 255, 1);
   font-size: 1.5rem;
 }
 
@@ -701,8 +701,7 @@ input::placeholder {
   top: -0.5rem;
   left: -0.5rem;
   border-width: 0.25rem;
-  border-color: #513aa6;
-  /* border-color: #233742; */
+  border-color: #233742;
 }
 
 .movie-image img {
@@ -745,8 +744,12 @@ input::placeholder {
 \*--------------------------------------------------------------------------*/
 
 .movie-summary__title {
+  font-family: "Red Hat Display", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
   font-size: 2.2rem;
+  font-weight: 400;
   line-height: 1.5;
+  color: #e3e3e3;
 }
 
 .movie-summary__key-facts__list {
