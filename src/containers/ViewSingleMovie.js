@@ -38,9 +38,28 @@ const ViewSingleMovie = () => {
         );
 
         const data = await res.json();
-        setMovie(data);
-      } catch (err) {
-        console.error(err);
+
+        if (data.Response === "False") {
+          const error = new Error(data.Error);
+          appDispatch({ type: "UPDATE_ERROR", payload: { error: error } });
+          appDispatch({
+            type: "UPDATE_STATUS",
+            payload: { status: "rejected" },
+          });
+        } else {
+          appDispatch({
+            type: "UPDATE_MOVIE_RESULTS",
+            payload: { movieDetails: data },
+          });
+          appDispatch({
+            type: "UPDATE_STATUS",
+            payload: { status: "resolved" },
+          });
+        }
+      } catch (error) {
+        console.error(error);
+        appDispatch({ type: "UPDATE_ERROR", payload: { error: error } });
+        appDispatch({ type: "UPDATE_STATUS", payload: { status: "rejected" } });
       }
     };
 
