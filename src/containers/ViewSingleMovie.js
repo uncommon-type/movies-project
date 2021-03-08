@@ -20,6 +20,16 @@ const ViewSingleMovie = () => {
   };
 
   useEffect(() => {
+    if (!/\b[a-z]{2}[0-9]/.test(id)) {
+      const error = new Error("Not found");
+      appDispatch({ type: "UPDATE_ERROR", payload: { error: error } });
+      appDispatch({
+        type: "UPDATE_STATUS",
+        payload: { status: "rejected" },
+      });
+      return;
+    }
+
     const getMovieDetails = async (id, searchType) => {
       try {
         const res = await fetch(
