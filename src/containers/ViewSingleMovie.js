@@ -78,6 +78,10 @@ const ViewSingleMovie = () => {
     );
   }
 
+  if (appState.status === "rejected") {
+    return <ErrorMessage error={appState.error} />;
+  }
+
   return (
     <article className="wrapper">
       <div className="wrapper__inner splitter gap-top-600">
