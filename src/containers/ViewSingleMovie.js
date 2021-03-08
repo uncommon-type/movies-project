@@ -66,6 +66,10 @@ const ViewSingleMovie = () => {
     getMovieDetails(id, "id");
   }, [id]);
 
+  if (appState.status === "idle") {
+    return null;
+  }
+
   return (
     <article className="wrapper">
       <div className="wrapper__inner splitter gap-top-600">
