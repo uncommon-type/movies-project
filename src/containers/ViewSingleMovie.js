@@ -31,6 +31,7 @@ const ViewSingleMovie = () => {
     }
 
     const getMovieDetails = async (id, searchType) => {
+      appDispatch({ type: "UPDATE_STATUS", payload: { status: "pending" } });
       try {
         const res = await fetch(
           `/.netlify/functions/search?searchTerm=${id}&searchType=${searchType}`
