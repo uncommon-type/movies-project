@@ -75,24 +75,28 @@ const ViewSingleMovie = () => {
               <div className="movie-image frame" data-frame="primary">
                 <img
                   src={
-                    movie.Poster === "N/A"
+                    appState.movieDetails.Poster === "N/A"
                       ? "https://placehold.it/370x370"
-                      : movie.Poster
+                      : appState.movieDetails.Poster
                   }
-                  alt={movie.Title}
+                  alt={appState.movieDetails.Title}
                 />
               </div>
               <figcaption className="movie-details">
                 <span className="movie__title font-sans weight-bold">
-                  {movie.Title}
+                  {appState.movieDetails.Title}
                 </span>
-                <span className="movie__year">{movie.Year}</span>
+                <span className="movie__year">
+                  {appState.movieDetails.Year}
+                </span>
               </figcaption>
             </figure>
           </div>
 
           <div className="flow">
-            <span className="plot text-400 lg:text-800">{movie.Plot}</span>
+            <span className="plot text-400 lg:text-800">
+              {appState.movieDetails.Plot}
+            </span>
           </div>
         </div>
 
@@ -101,26 +105,32 @@ const ViewSingleMovie = () => {
           <ol className="movie-summary__key-facts__list auto-grid">
             <li className="flow">
               <span className="text-700 lg:text-800">
-                {movie.BoxOffice || "N/A"}
+                {appState.movieDetails.BoxOffice || "N/A"}
               </span>
               <span className="text-600 lg:text-700">BoxOffice</span>
             </li>
             <li className="flow">
               <span className="text-700 lg:text-800">
-                {movie.IMDBRating || "N/A"}
+                {appState.movieDetails.IMDBRating || "N/A"}
               </span>
               <span className="text-600 lg:text-700">IMDB Rating</span>
             </li>
             <li className="flow">
-              <span className="text-700 lg:text-800">{movie.Awards}</span>
+              <span className="text-700 lg:text-800">
+                {appState.movieDetails.Awards}
+              </span>
               <span className="text-600 lg:text-700">Awards</span>
             </li>
             <li className="flow">
-              <span className="text-700 lg:text-800">{movie.Director}</span>
+              <span className="text-700 lg:text-800">
+                {appState.movieDetails.Director}
+              </span>
               <span className="text-600 lg:text-700">Director</span>
             </li>
             <li className="flow">
-              <span className="text-700 lg:text-800">{movie.Actors}</span>
+              <span className="text-700 lg:text-800">
+                {appState.movieDetails.Actors}
+              </span>
               <span className="text-600 lg:text-700">Actors</span>
             </li>
           </ol>
