@@ -24,7 +24,7 @@ const SearchResults = ({ playList }) => {
         return;
       }
 
-      setStatus("pending");
+      appDispatch({ type: "UPDATE_STATUS", payload: { status: "pending" } });
 
       try {
         const res = await fetch(
