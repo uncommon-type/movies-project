@@ -13,7 +13,7 @@ const ViewSingleMovie = () => {
   };
 
   useEffect(() => {
-    const getMovies = async (id, searchType) => {
+    const getMovieDetails = async (id, searchType) => {
       try {
         const res = await fetch(
           `/.netlify/functions/search?searchTerm=${id}&searchType=${searchType}`
@@ -26,7 +26,7 @@ const ViewSingleMovie = () => {
       }
     };
 
-    getMovies(id, "id");
+    getMovieDetails(id, "id");
   }, [id, setMovie]);
 
   return (
