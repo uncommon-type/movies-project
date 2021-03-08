@@ -5,7 +5,7 @@ import DispatchContext from "../DispatchContext";
 import RemoveButton from "./RemoveButton";
 import StarIcon from "../Icons/Star.js";
 
-const PlayListItem = ({ id, title, year, onRemove }) => {
+const PlayListItem = ({ id, title, year }) => {
   const appDispatch = useContext(DispatchContext);
 
   const handleRemove = () => {
