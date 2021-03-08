@@ -1,4 +1,7 @@
 import React, { useContext } from "react";
+
+import DispatchContext from "../DispatchContext";
+
 import RemoveButton from "./RemoveButton";
 import StarIcon from "../Icons/Star.js";
 
