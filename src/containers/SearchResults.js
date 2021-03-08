@@ -60,9 +60,9 @@ const SearchResults = ({ playList }) => {
 
   const checkIfAdded = useCallback(
     (id) => {
-      return !!playList.find((entry) => entry.id === id);
+      return !!appState.playList.find((entry) => entry.id === id);
     },
-    [playList]
+    [appState.playList]
   );
 
   if (status === "idle") {
