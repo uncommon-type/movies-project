@@ -8,6 +8,10 @@ import StarIcon from "../Icons/Star.js";
 const PlayListItem = ({ id, title, year, onRemove }) => {
   const appDispatch = useContext(DispatchContext);
 
+  const handleRemove = () => {
+    appDispatch({ type: "REMOVE_FROM_PLAYLIST", payload: { id } });
+  };
+
   return (
     <li className="playlist__item">
       <div className="playlist__item__body">
