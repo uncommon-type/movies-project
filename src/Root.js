@@ -19,7 +19,12 @@ const Root = () => {
     error: null,
   };
 
-  const reducer = (state, action) => {};
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "UPDATE_PLAYLIST":
+        return {};
+    }
+  };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
