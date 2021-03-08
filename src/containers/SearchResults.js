@@ -81,10 +81,6 @@ const SearchResults = ({ playList }) => {
     return <ErrorMessage error={appState.error} />;
   }
 
-  if (status === "resolved" && searchState.results.length === 0) {
-    return <ErrorMessage />;
-  }
-
   if (status === "resolved") {
     return (
       <article className="app__main-content">
