@@ -38,7 +38,12 @@ const Root = () => {
         };
 
       case "REMOVE_FROM_PLAYLIST":
-        return {};
+        return {
+          ...state,
+          playList: state.playList.filter(
+            (item) => item.id !== action.payload.id
+          ),
+        };
 
       default:
         return state;
