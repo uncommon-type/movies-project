@@ -10,6 +10,7 @@ import ErrorMessage from "../components/ErrorMessage";
 
 const ViewSingleMovie = () => {
   const appState = useContext(StateContext);
+  const appDispatch = useContext(DispatchContext);
 
   const { id } = useParams();
   const history = useHistory();
