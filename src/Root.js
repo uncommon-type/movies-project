@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import StateContext from "./StateContext";
@@ -11,6 +11,14 @@ import ViewSingleMovie from "./containers/ViewSingleMovie";
 import Dialog from "./components/Dialog";
 
 const Root = () => {
+  const initialState = {
+    playList: JSON.parse(localStorage.getItem("playList")) || [],
+    searchResults: [],
+    movieDetails: {},
+    status: "idle",
+    error: null,
+  };
+
   const [playList, setPlayList] = useState(
     JSON.parse(localStorage.getItem("playList")) || []
   );
