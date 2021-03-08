@@ -9,7 +9,12 @@ import StarIcon from "../Icons/Star.js";
 const MovieListItem = ({ id, title, year, isAdded }) => {
   const appDispatch = useContext(DispatchContext);
 
-  const handleAdd = () => {};
+  const handleAdd = () => {
+    appDispatch({
+      type: "ADD_TO_PLAYLIST",
+      payload: { id, title, year },
+    });
+  };
 
   return (
     <li className="movie-item">
