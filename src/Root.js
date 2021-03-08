@@ -48,6 +48,9 @@ const Root = () => {
       case "UPDATE_SEARCH_RESULTS":
         return { ...state, searchResults: action.payload.searchResults };
 
+      case "UPDATE_ERROR":
+        return {};
+
       default:
         return state;
     }
