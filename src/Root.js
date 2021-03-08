@@ -45,19 +45,6 @@ const Root = () => {
     localStorage.setItem("playList", JSON.stringify(state.playList));
   }, [state.playList]);
 
-  const handleAdd = (id, title, year) => {
-    setPlayList((playList) => {
-      return [
-        ...playList,
-        {
-          id,
-          title,
-          year,
-        },
-      ];
-    });
-  };
-
   // const handleRemove = (id) => {
   //   setPlayList((playList) => playList.filter((item) => item.id !== id));
   // };
