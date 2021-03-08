@@ -67,7 +67,7 @@ const Root = () => {
   };
 
   return (
-    <StateContext.Provider>
+    <StateContext.Provider value={state}>
       <DispatchContext.Provider>
         <Router>
           <Header />
