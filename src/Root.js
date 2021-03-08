@@ -68,7 +68,7 @@ const Root = () => {
 
   return (
     <StateContext.Provider value={state}>
-      <DispatchContext.Provider>
+      <DispatchContext.Provider value={dispatch}>
         <Router>
           <Header />
           <SearchBar />
