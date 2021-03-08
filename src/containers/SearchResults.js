@@ -81,13 +81,13 @@ const SearchResults = ({ playList }) => {
     return <ErrorMessage error={appState.error} />;
   }
 
-  if (status === "resolved") {
+  if (appState.status === "resolved") {
     return (
       <article className="app__main-content">
         <div className="main-content__body gap-top-600">
           <MovieList
-            searchTerm={searchState.searchTerm}
-            searchResults={searchState.results}
+            searchTerm={searchTerm}
+            searchResults={appState.searchResults}
             checkIfAdded={checkIfAdded}
           />
           <PlayList playList={playList} />
