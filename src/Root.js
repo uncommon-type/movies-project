@@ -68,10 +68,7 @@ const Root = () => {
           <SearchBar />
           <Route path="/search">
             <main>
-              <SearchResults
-                playList={state.playList}
-                onRemove={handleRemove}
-              />
+              <SearchResults playList={state.playList} />
 
               {state.playList.length > 4 ? (
                 <Dialog closeDialog={handleCloseDialog} />
