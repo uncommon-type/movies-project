@@ -19,6 +19,7 @@ const Root = () => {
     error: null,
   };
 
+  const reducer = (state, action) => {};
   const [playList, setPlayList] = useState(
     JSON.parse(localStorage.getItem("playList")) || []
   );
