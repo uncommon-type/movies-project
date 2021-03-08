@@ -49,7 +49,7 @@ const Root = () => {
         return { ...state, searchResults: action.payload.searchResults };
 
       case "UPDATE_MOVIE_RESULTS":
-        return {};
+        return { ...state, movieDetails: action.payload.movieDetails };
 
       case "UPDATE_ERROR":
         return { ...state, error: action.payload.error };
