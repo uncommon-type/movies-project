@@ -8,7 +8,9 @@ const SearchBar = () => {
 
   const updateURL = useCallback(
     (query) => {
-      history.push(`/search/?q=${query}`);
+      if (query.length > 2) {
+        history.push(`/search/?q=${query}`);
+      }
     },
     [history]
   );
