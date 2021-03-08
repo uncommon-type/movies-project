@@ -56,7 +56,7 @@ const SearchResults = ({ playList }) => {
       }
     };
     getMovies(searchTerm);
-  }, [searchTerm, setSearchState]);
+  }, [searchTerm]);
 
   const checkIfAdded = useCallback(
     (id) => {
