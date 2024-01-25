@@ -1,6 +1,5 @@
 # Build your want-to-see-list
 
-
 App to build a 'want-to-see movie-list'
 <br/>
 <br/>
@@ -18,7 +17,7 @@ App to build a 'want-to-see movie-list'
 ## Built With 
 
 -  React
--  HTML/CSS
+-  CSS
 -  OMDB API
 -  Netlify serverless functions
 
